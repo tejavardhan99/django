@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+</head>
+<body>
+
+<!-- Image Upload Form -->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myimage">
+    <input type="submit" value="Upload">
+</form>
+
+<!-- Show Uploaded Image -->
+{% if message %}
+    <h3>{{ message }}</h3>
+{% endif %}
+
+</body>
+</html>
+
