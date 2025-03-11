@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>siddu</title>
+
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            <h2>APPLICATION FORM</h2>
+            <div>
+                <lable>firstname:</lable>
+                <input type="text" name="firstname">
+            </div>
+            <div>
+                <lable>lasttname:</lable>
+                <input type="text" name="lastname">
+            </div>
+            <div>
+                <lable>email:</lable>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <lable>password:</lable>
+                <input type="password" name="password">
+            </div>
+            <button>submit</button>
+        </form>
+        {% if messages %}
+        
+        <ul>
+            {% for i in messages %}
+            <li>{{i}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>

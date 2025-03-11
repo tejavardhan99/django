@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>siddu</title>
+        <style>
+            h2,div{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            <h2>LOGIN FORM</h2>
+            <div>
+                <label>EMAIL:</label>
+                <input type="text" name="email">
+            </div><br>
+            <div>
+                <label>PASSWORD:</label>
+                <input type="password" name="password" style="margin-right:40px ;">
+            </div><br>
+            <button style="margin-left:660px ;">login</button>
+        </form>
+        {% if messages %}
+      
+        <ul>
+            {%for i in messages%}
+            <li>
+                {{i}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>

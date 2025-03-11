@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>lenka</title>
+        <style>
+            th,tr,td{
+                border:solid 2px;
+                
+            }
+            table{
+                border-collapse:collapse;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form >
+        <table>
+            <tr>
+                <th>S.NO</th>
+                <th>FIRSTNAME</th>
+                <th>LASTNAME</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+            </tr>
+            {% if student %}
+            {% for i in student %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.lastname}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.firstname}}</td>
+                {% endfor %}
+            </tr>
+            {% endif %}
+        </table>
+    </form>
+    </body>
+</html>
